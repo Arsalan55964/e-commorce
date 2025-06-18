@@ -1,15 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import HeaderBanner from './component/Headerbanner';
-import Navbar from './component/NavBar';
-import HeroSection from './component/HeroSection';
-import BrandsFooter from './component/BrandFooter';
-import NewArrivals from './component/NewArrivals';
-import TopSelling from './component/TopSelling';
-import Brands from './component/Brands';
-
+import HeaderBanner from "./component/HeaderBanner";
+import Navbar from "./component/NavBar";
+import HeroSection from "./component/HeroSection";
+import BrandsFooter from "./component/BrandFooter";
+import NewArrivals from "./component/NewArrivals";
+import TopSelling from "./component/TopSelling";
+import Brands from "./component/Brands";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function App() {
   return (
     <Router>
@@ -17,16 +17,19 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={
-          <>
-            <HeroSection />
-            <BrandsFooter />
-            <NewArrivals />
-            <TopSelling />
-            <Brands />
-          </>
-        } />
-        
+        <Route
+          path="/"
+          element={
+            <>
+              <HeroSection />
+              <BrandsFooter />
+              <NewArrivals />
+              <TopSelling />
+              <Brands />
+            </>
+          }
+        />
+
         <Route path="/new-arrivals" element={<NewArrivals />} />
         <Route path="/top-selling" element={<TopSelling />} />
         <Route path="/brands" element={<Brands />} />
