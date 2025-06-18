@@ -39,40 +39,7 @@ const TopSelling = () => {
       <h1 className="flex justify-center font-extrabold text-6xl pt-5">
         TOP SELLING
       </h1>
-      {/* <div className="flex flex-wrap justify-center gap-8 pt-10 px-4">
-        
-        <div>
-          <img src="Frame 32 (1).svg" />
-          <p className="font-semibold">Verticale Striped Shirt</p>
-          <img src="Frame 35.jpg" />
-          <div className="flex gap-1 items-center">
-            <p className="font-bold text-2xl">$212</p>
-            <img src="$232.svg" />
-            <img src="Frame 42.svg" />
-          </div>
-        </div>
-       
-        <div>
-          <img src="Frame 33 (1).svg" />
-          <p className="font-semibold">Courage Graphic T-shirt</p>
-          <img src="Frame 39 (1).svg" />
-          <img src="Frame 59.svg" />
-        </div>
-       
-        <div>
-          <img src="Frame 34 (1).svg" />
-          <p className="font-semibold">Losse Fit Bermuda Short</p>
-          <img src="Frame 40.svg" />
-          <p className="font-bold text-2xl">$80</p>
-        </div>
-     
-        <div>
-          <img src="Frame 38 (1).svg" />
-          <p className="font-semibold">Faded Skinny Fit Jeans</p>
-          <img src="Frame 35.svg" />
-          <p className="font-bold text-2xl">$210</p>
-        </div>
-      </div> */}
+      
       <div className="flex flex-wrap justify-center gap-25 mt-10">
         {Boxes.map((Boxes) => (
           <div
@@ -103,9 +70,7 @@ const TopSelling = () => {
           VIEW ALL
         </button>
       </div>
-      <div className="pt-20 flex flex-wrap justify-center pb-5">
-        {/* <img src="Frame 60.png" className="max-w-full h-auto" /> */}
-      </div>
+     
     </>
   );
 };

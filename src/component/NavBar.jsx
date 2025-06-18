@@ -1,45 +1,72 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faMagnifyingGlass,
+  faCartShopping,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => (
-  <nav className="flex flex-wrap items-center justify-between px-4 py-4 max-w-screen-xl mx-auto gap-4">
-    {/* Logo */}
-    <h1 className="font-extrabold text-3xl sm:text-4xl pl-2 sm:pl-8">
-      <a href="#">SHOP.CO</a>
-    </h1>
 
-    {/* Menu Links */}
-    <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-3 w-full sm:w-auto">
-      <p className="flex items-center gap-2">
-        <a href="#" className="flex items-center">
-          SHOP <img src="Frame.png" alt="shop" className="h-5" />
-        </a>
-      </p>
-      <a href="#" className="text-sm sm:text-base">On Sale</a>
-      <a href="#" className="text-sm sm:text-base">New Arrival</a>
-      <a href="#" className="text-sm sm:text-base">Brands</a>
-    </div>
+const Navbar = () => {
+  return (
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md px-4 py-4">
+      {/* Flex Container */}
+      <div className="flex items-center justify-between">
+        {/* Left: Menu + Logo */}
+        <div className="flex items-center gap-3">
+          <div className="block lg:hidden">
+            <FontAwesomeIcon icon={faBars} className="text-2xl" />
+          </div>
 
-    {/* Search Box */}
-    <div className="flex items-center w-full sm:w-auto max-w-xs sm:max-w-md bg-gray-100 border border-gray-300 shadow-md rounded-full px-4 py-2">
-      <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-500" />
-      <input
-        type="text"
-        placeholder="Search for product..."
-        className="bg-transparent pl-2 outline-none w-full"
-      />
-    </div>
+          <h1 className="font-extrabold text-2xl sm:text-3xl">
+            <Link to="/">SHOP.CO</Link>
+          </h1>
+        </div>
 
-    {/* Cart & User Icons */}
-    <div className="flex items-center gap-5">
-      <FontAwesomeIcon icon={faCartShopping} className="text-gray-700 text-2xl cursor-pointer" />
-      <FontAwesomeIcon icon={faUser} className="text-gray-700 text-2xl cursor-pointer" />
-    </div>
-  </nav>
-);
+        {/* Middle: Links */}
+        <div className="hidden lg:flex gap-6">
+          <Link to="/" className="flex items-center gap-1 font-medium">
+            SHOP <img src="Frame.png" alt="shop" className="h-5" />
+          </Link>
+          <Link to="/new-arrivals" className="font-medium">
+            New Arrival
+          </Link>
+          <Link to="/top-selling" className="font-medium">
+            Top Selling
+          </Link>
+          <Link to="/brands" className="font-medium">
+            Brands
+          </Link>
+        </div>
+
+        {/* Right: Search + Icons */}
+        <div className="flex items-center gap-4">
+          <div className="flex items-center bg-gray-100 border border-gray-300 shadow-md rounded-full px-3 py-2">
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className="text-gray-600"
+            />
+            <input
+              type="text"
+              placeholder="Search for product..."
+              className="hidden lg:block bg-transparent pl-2 outline-none w-72"
+            />
+          </div>
+
+          <FontAwesomeIcon
+            icon={faCartShopping}
+            className="text-2xl text-gray-700"
+          />
+          <FontAwesomeIcon icon={faUser} className="text-2xl text-gray-700" />
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+
 
 export default Navbar;

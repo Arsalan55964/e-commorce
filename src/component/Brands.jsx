@@ -57,7 +57,7 @@ function Brands() {
 
         <div className="relative w-full md:w-[57%]">
           <img
-            className="h-60 w-full object-cover rounded-xl"
+            className="h-60 w-full object-cover rounded-xl transition duration-300 hover:scale-105"
             src="second.png"
             alt="Formal"
           />
@@ -71,7 +71,7 @@ function Brands() {
       <section className="flex flex-col md:flex-row gap-4 relative">
         <div className="relative w-full md:w-[57%]">
           <img
-            className="h-60 w-full object-cover rounded-xl"
+            className="h-60 w-full object-cover rounded-xl transition duration-300 hover:scale-105"
             src="third.png"
             alt="Gym"
           />
@@ -82,7 +82,7 @@ function Brands() {
 
         <div className="relative w-full md:w-[40%]">
           <img
-            className="h-60 w-full object-cover rounded-xl"
+            className="h-60 w-full object-cover rounded-xl transition duration-300 hover:scale-105"
             src="four.png"
             alt="Party"
           />
