@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import "./App.css";
 import HeaderBanner from './component/Headerbanner';
@@ -10,22 +11,28 @@ import TopSelling from './component/TopSelling';
 import Brands from './component/Brands';
 
 function App() {
- 
-
   return (
-    <>
-     <HeaderBanner/>
-     <Navbar/>
-     <HeroSection />
-     <BrandsFooter />
-     <NewArrivals />
-     <TopSelling />
-     <Brands />
-   
-     
-    
-    </>
-  )
+    <Router>
+      <HeaderBanner />
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={
+          <>
+            <HeroSection />
+            <BrandsFooter />
+            <NewArrivals />
+            <TopSelling />
+            <Brands />
+          </>
+        } />
+        
+        <Route path="/new-arrivals" element={<NewArrivals />} />
+        <Route path="/top-selling" element={<TopSelling />} />
+        <Route path="/brands" element={<Brands />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
