@@ -2,18 +2,17 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import topSellingProducts from "../data/topSellingProducts";
 
-const TopSelling = () => {
+const TopSellingAll = () => {
   const navigate = useNavigate();
-  const featured = topSellingProducts.slice(0, 4);
 
   return (
     <div className="px-4 py-8">
       <h1 className="text-4xl md:text-6xl font-extrabold text-center pb-8">
-        TOP SELLING
+        TOP SELLING PRODUCTS
       </h1>
 
       <div className="flex flex-wrap justify-center gap-10">
-        {featured.map((product) => (
+        {topSellingProducts.map((product) => (
           <div
             key={product.id}
             className="text-center max-w-[200px] hover:scale-105 transition-transform duration-300"
@@ -36,14 +35,14 @@ const TopSelling = () => {
 
       <div className="flex justify-center">
         <button
-          onClick={() => navigate("/top-selling")}
+          onClick={() => navigate("/")}
           className="mt-10 h-12 w-48 border-2 border-gray-300 rounded-full text-black hover:bg-black hover:text-white transition duration-300"
         >
-          VIEW ALL
+          BACK TO HOME
         </button>
       </div>
     </div>
   );
 };
 
-export default TopSelling;
+export default TopSellingAll;
