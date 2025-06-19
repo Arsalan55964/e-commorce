@@ -9,8 +9,9 @@ import BrandsFooter from "./component/BrandFooter";
 import NewArrivals from "./component/NewArrivals";
 import TopSelling from "./component/TopSelling";
 import Brands from "./component/Brands";
-import Next from "./component/Next";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AllProducts from "./component/AllProduct";
+import TopSellingAll from "./component/TopSellingAll";
 function App() {
   return (
     <Router>
@@ -25,6 +26,7 @@ function App() {
               <HeroSection />
               <BrandsFooter />
               <NewArrivals />
+             
               <TopSelling />
               <Brands />
             </>
@@ -32,7 +34,8 @@ function App() {
         />
 
         <Route path="/new-arrivals" element={<NewArrivals />} />
-        <Route path="/top-selling" element={<TopSelling />} />
+          <Route path="/all-products" element={<AllProducts />} />
+        <Route path="/top-selling" element={<TopSellingAll />} />
         <Route path="/brands" element={<Brands />} />
         <Route path="/Next" element={<Next />} />
       </Routes>

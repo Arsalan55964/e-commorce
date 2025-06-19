@@ -1,49 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import products from "../data/products";
 
 const NewArrivals = () => {
-  const products = [
-    {
-      id: 1,
-      image: "Frame 32.svg",
-      name: "T-shirt with Tape Details",
-      image1: "Frame 35.svg",
-      price: 120,
-      description: "A stylish t-shirt with unique tape details.",
-    },
-    {
-      id: 2,
-      image: "Frame 33.svg",
-      name: "Skinny Fit Jeans",
-      image1: "Frame 39.svg",
-      price: 80,
-      description: "Comfortable skinny fit jeans for everyday wear.",
-    },
-    {
-      id: 3,
-      image: "Frame 34.svg",
-      name: "Chekerd Shirt",
-      image1: "Frame 35.svg",
-      price: 180,
-      description: "A trendy chekerd shirt for casual outings.",
-    },
-    {
-      id: 4,
-      image: "Frame 38.svg",
-      name: "Sleeve Striped T-shirt",
-      image1: "Frame 44.svg",
-      price: 100,
-      description: "A stylish sleeve striped t-shirt for a modern look.",
-    },
-  ];
+  const navigate = useNavigate();
+  const featuredProducts = products.slice(0, 4);
 
   return (
     <div className="px-4 py-8">
-      <h1 className="flex justify-center text-4xl md:text-6xl font-extrabold pb-8">
+      <h1 className="text-4xl md:text-6xl font-extrabold text-center pb-8">
         NEW ARRIVALS
       </h1>
 
-      <div className="flex flex-wrap justify-center gap-25">
-        {products.map((product) => (
+      <div className="flex flex-wrap justify-center gap-10">
+        {featuredProducts.map((product) => (
           <div
             key={product.id}
             className="text-center max-w-[200px] hover:scale-105 transition-transform duration-300"
@@ -60,15 +30,14 @@ const NewArrivals = () => {
               className="my-2 mx-auto w-24"
             />
             <p className="font-bold text-xl text-gray-800">${product.price}</p>
-            
           </div>
         ))}
       </div>
 
       <div className="flex justify-center">
         <button
-          className="mt-10 h-12 w-48 border-2 border-gray-300 rounded-full text-black hover:bg-black hover:text-white transition-colors duration-300"
-          onClick={() => alert("View all")}
+          onClick={() => navigate("/all-products")}
+          className="mt-10 h-12 w-48 border-2 border-gray-300 rounded-full text-black hover:bg-black hover:text-white transition duration-300"
         >
           VIEW ALL
         </button>
