@@ -37,7 +37,7 @@ function App() {
           <Route path="/all-products" element={<AllProducts />} />
         <Route path="/top-selling" element={<TopSellingAll />} />
         <Route path="/brands" element={<Brands />} />
-        <Route path="/Next" element={<Next />} />
+        {/* <Route path="/Next" element={<Next />} /> */}
       </Routes>
     </Router>
   );
