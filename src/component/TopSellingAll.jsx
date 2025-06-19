@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import topSellingProducts from "../data/topSellingProducts";
+import topSellingProducts from "./data/topSellingProducts";
 
 const TopSellingAll = () => {
   const navigate = useNavigate();
