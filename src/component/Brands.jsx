@@ -36,8 +36,14 @@
 // export default Brands
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Brands() {
+  const navigate = useNavigate();
+
+  const GoFirst = () => {
+    navigate("./Next")
+  }
   return (
     <div className="w-[80%] mx-auto mt-8 bg-[#F0F0F0] rounded-2xl p-6">
       <h1 className="text-center text-5xl font-bold mb-6">BROWSE BY DRESS STYLE</h1>
@@ -49,6 +55,7 @@ function Brands() {
             className="h-60 w-full object-cover rounded-xl transition duration-300 hover:scale-105"
             src="first.png"
             alt="Casual"
+onClick={() => GoFirst()}
           />
           <h1 className="absolute top-4 left-4 text-2xl font-bold  bg-opacity-50  px-3 py-1 rounded">
             Casual

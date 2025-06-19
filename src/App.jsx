@@ -9,7 +9,8 @@ import BrandsFooter from "./component/BrandFooter";
 import NewArrivals from "./component/NewArrivals";
 import TopSelling from "./component/TopSelling";
 import Brands from "./component/Brands";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Next from "./component/Next";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function App() {
   return (
     <Router>
@@ -33,6 +34,7 @@ function App() {
         <Route path="/new-arrivals" element={<NewArrivals />} />
         <Route path="/top-selling" element={<TopSelling />} />
         <Route path="/brands" element={<Brands />} />
+        <Route path="/Next" element={<Next />} />
       </Routes>
     </Router>
   );
