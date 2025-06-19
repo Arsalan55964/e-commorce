@@ -1,7 +1,9 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AuthModal from "../SignLogin/AuthModel";
+
 import {
   faBars,
   faMagnifyingGlass,
@@ -11,7 +13,12 @@ import {
 
 
 const Navbar = () => {
+
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const toggleAuthModal = () => setShowAuthModal(!showAuthModal);
+
   return (
+    <>
     <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md px-4 py-4">
       {/* Flex Container */}
       <div className="flex items-center justify-between">
@@ -60,10 +67,14 @@ const Navbar = () => {
             icon={faCartShopping}
             className="text-2xl text-gray-700"
           />
-          <FontAwesomeIcon icon={faUser} className="text-2xl text-gray-700" />
+          <FontAwesomeIcon icon={faUser} className="text-2xl text-gray-700" 
+           onClick={toggleAuthModal}
+          />
         </div>
       </div>
     </nav>
+    <AuthModal open={showAuthModal} onClose={toggleAuthModal} />
+    </>
   );
 };
 
