@@ -12,13 +12,20 @@ import Brands from "./component/Brands";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AllProducts from "./component/AllProduct";
 import TopSellingAll from "./component/TopSellingAll";
+import Login from "./SignLogin/Login";
 function App() {
   return (
     <Router>
       <HeaderBanner />
       <Navbar />
 
+
       <Routes>
+        <Route
+      path="/login"
+      element={<Login onClose={() =>{}} onSwitch={() =>{}}/>}
+      />
+      
         <Route
           path="/"
           element={

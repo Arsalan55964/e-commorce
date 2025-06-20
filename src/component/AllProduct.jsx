@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import products from "../data/products"; // ✅ Correct relative import
+import products from "../data/products"; 
 
 const AllProducts = () => {
   const navigate = useNavigate();

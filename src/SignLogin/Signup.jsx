@@ -16,6 +16,7 @@ import {
 import { styled } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 // import { auth, db } from '../FirebaseConfig';
 // import { createUserWithEmailAndPassword } from 'firebase/auth';
 // import { doc, setDoc } from 'firebase/firestore';
@@ -70,11 +71,27 @@ export default function SignUp({ onClose, onSwitch }) {
       // const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       // await setDoc(doc(db, 'users', userCredential.user.uid), { name, email });
       // toast.success('Account created successfully!');
-      navigate('/');
+
+      const response = await axios.post('http://localhost:5000/api/user/create',{
+        name,
+        email,
+        password,
+      })
+
+     if (response.status === 201 || response.status === 200) {
+      console.log('Signup successful:', response.data);
+      navigate('/login');
       onClose();
-    } catch (error) {
-      console.error(error.message);
+      onSwitch(); 
+    } 
+    else {
+      console.error('Unexpected response:', response);
     }
+  }
+   catch (error) {
+    console.error('Signup error:', error.response?.data || error.message);
+  }
+
   };
 
   return (
