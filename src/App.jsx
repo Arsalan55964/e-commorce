@@ -13,6 +13,7 @@ import Brands from "./component/Brands";
 import AllProducts from "./component/AllProduct";
 import TopSellingAll from "./component/TopSellingAll";
 import Next from "./component/Next"
+import ShopFooter from "./component/footer";
 function App() {
   return (
     <Router>
@@ -30,6 +31,7 @@ function App() {
              
               <TopSelling />
               <Brands />
+              <ShopFooter/>
             </>
           }
         />
