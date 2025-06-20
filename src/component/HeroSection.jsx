@@ -1,9 +1,19 @@
 // src/components/HeroSection.js
 
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
+  
 const HeroSection = () => {
+
+  const navigate = useNavigate();
+
+  const GFirst = () => {
+    navigate("./Next")
+  }
+
   return (
+    <>
     <div className="bg-[#f2f0f1] py-10">
       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center lg:items-start">
         
@@ -19,7 +29,9 @@ const HeroSection = () => {
           </p>
           <button
             className="mt-10 h-14 w-full sm:w-48 border-2 bg-black border-gray-300 rounded-full text-white hover:bg-white hover:text-black transition-colors duration-300"
-            onClick={() => alert("shop now")}
+            // onClick={() => alert("shop now")}
+            onClick={() => GFirst()}
+
           >
             Shop Now
           </button>
@@ -60,6 +72,10 @@ const HeroSection = () => {
         </div>
       </div>
     </div>
+
+     {/* <Footer />
+              <Comments /> */}
+     </>
   );
 };
 

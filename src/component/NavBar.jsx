@@ -37,6 +37,7 @@ const Navbar = () => {
         <div className="hidden lg:flex gap-6">
           <Link to="/" className="flex items-center gap-1 font-medium">
             SHOP <img src="Frame.png" alt="shop" className="h-5" />
+
           </Link>
           <Link to="/new-arrivals" className="font-medium">
             New Arrival

@@ -13,7 +13,8 @@ import Brands from "./component/Brands";
 import AllProducts from "./component/AllProduct";
 import TopSellingAll from "./component/TopSellingAll";
 import Next from "./component/Next"
-import ShopFooter from "./component/footer";
+import Footer from "./component/Footer";
+import Comments from "./component/Comments";
 function App() {
   return (
     <Router>
@@ -31,7 +32,9 @@ function App() {
              
               <TopSelling />
               <Brands />
-              <ShopFooter/>
+                            <Comments/>
+
+              <Footer/>
             </>
           }
         />

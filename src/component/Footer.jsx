@@ -3,9 +3,8 @@ import { Mail, Facebook, Twitter, Instagram, Github } from 'lucide-react';
 
 export default function ShopFooter() {
   return (
-    <footer className="bg-gray-100 py-12 px-4">
+    <footer className="bg-gray-100 py-12 px-4 mt-[2rem]">
       <div className="max-w-6xl mx-auto">
-        {/* Newsletter Section */}
         <div className="bg-black text-white rounded-2xl p-8 mb-12 flex flex-col md:flex-row items-center justify-between">
           <div className="mb-6 md:mb-0">
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
@@ -54,7 +53,6 @@ export default function ShopFooter() {
             </div>
           </div>
 
-          {/* Company Links */}
           <div>
             <h4 className="font-semibold text-black mb-4 tracking-wide">COMPANY</h4>
             <ul className="space-y-3 text-sm text-gray-600">
