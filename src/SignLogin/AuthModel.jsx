@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Box } from '@mui/material';
+import { Modal } from '@mui/material';
 import Login from '../SignLogin/Login';
 import SignUp from '../SignLogin/Signup';
 
@@ -16,7 +16,6 @@ const AuthModal = ({ open, onClose }) => {
         ) : (
           <SignUp onClose={onClose} onSwitch={handleSwitch} />
         )}
-      {/* </Box> */}
     </Modal>
   );
 };

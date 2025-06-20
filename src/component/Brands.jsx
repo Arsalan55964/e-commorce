@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Brands() {
   const navigate = useNavigate();
 
-  const GoFirst = () => {
+  const GFirst = () => {
     navigate("./Next")
   }
   return (
@@ -20,7 +20,7 @@ function Brands() {
             className="h-60 w-full object-cover rounded-xl transition duration-300 hover:scale-105"
             src="first.png"
             alt="Casual"
-onClick={() => GoFirst()}
+onClick={() => GFirst()}
           />
           <h1 className="absolute top-4 left-4 text-2xl font-bold  bg-opacity-50  px-3 py-1 rounded">
             Casual

@@ -4,6 +4,10 @@ import products from "../data/products";
 
 const NewArrivals = () => {
   const navigate = useNavigate();
+const GoFirst = () => {
+    navigate("./DetailPage")
+  }
+
   const featuredProducts = products.slice(0, 4);
 
   return (
@@ -22,6 +26,7 @@ const NewArrivals = () => {
               src={product.image}
               alt={product.name}
               className="mb-2 w-full object-cover rounded-lg shadow-md"
+              onClick={() => GoFirst()}
             />
             <p className="font-semibold mt-2">{product.name}</p>
             <img
@@ -36,7 +41,6 @@ const NewArrivals = () => {
 
       <div className="flex justify-center">
         <button
-          onClick={() => navigate("/all-products")}
           className="mt-10 h-12 w-48 border-2 border-gray-300 rounded-full text-black hover:bg-black hover:text-white transition duration-300"
         >
           VIEW ALL
