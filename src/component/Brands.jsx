@@ -32,6 +32,8 @@ onClick={() => GFirst()}
             className="h-60 w-full object-cover rounded-xl transition duration-300 hover:scale-105"
             src="second.png"
             alt="Formal"
+            onClick={() => GFirst()}
+
           />
           <h1 className="absolute top-4 left-4 text-2xl font-bold  bg-opacity-50  px-3 py-1 rounded">
             Formal
@@ -46,6 +48,8 @@ onClick={() => GFirst()}
             className="h-60 w-full object-cover rounded-xl transition duration-300 hover:scale-105"
             src="third.png"
             alt="Gym"
+            onClick={() => GFirst()}
+
           />
           <h1 className="absolute top-4 left-4 text-2xl font-bold  bg-opacity-50  px-3 py-1 rounded">
             Party
@@ -56,6 +60,8 @@ onClick={() => GFirst()}
           <img
             className="h-60 w-full object-cover rounded-xl transition duration-300 hover:scale-105"
             src="four.png"
+onClick={() => GFirst()}
+
             alt="Party"
           />
           <h1 className="absolute top-4 left-4 text-2xl font-bold text-black-400 bg-opacity-50  px-3 py-1 rounded">

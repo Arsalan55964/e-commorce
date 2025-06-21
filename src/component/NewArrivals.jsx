@@ -1,14 +1,20 @@
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
+
+// import React, { useState } from "react";
 // import products from "../data/products";
+// import { useLocation } from "react-router-dom";
 
 // const NewArrivals = () => {
-//   const navigate = useNavigate();
-// const GoFirst = () => {
-//     navigate("./DetailPage")
-//   }
+//   const [showAll, setShowAll] = useState(false);
 
-//   const featuredProducts = products.slice(0, 4);
+//   const featuredProducts = showAll ? products : products.slice(0, 4);
+
+
+//   const location = useLocation();
+//   const { product } = location.state || {};
+
+//   if (!product) {
+//     return <h2>No product selected</h2>;
+//   }
 
 //   return (
 //     <div className="px-4 py-8">
@@ -26,7 +32,6 @@
 //               src={product.image}
 //               alt={product.name}
 //               className="mb-2 w-full object-cover rounded-lg shadow-md"
-//               onClick={() => GoFirst()}
 //             />
 //             <p className="font-semibold mt-2">{product.name}</p>
 //             <img
@@ -39,13 +44,16 @@
 //         ))}
 //       </div>
 
-//       <div className="flex justify-center">
-//         <button
-//           className="mt-10 h-12 w-48 border-2 border-gray-300 rounded-full text-black hover:bg-black hover:text-white transition duration-300"
-//         >
-//           VIEW ALL
-//         </button>
-//       </div>
+//       {!showAll && (
+//         <div className="flex justify-center">
+//           <button
+//             className="mt-10 h-12 w-48 border-2 border-gray-300 rounded-full text-black hover:bg-black hover:text-white transition duration-300"
+//             onClick={() => setShowAll(true)}
+//           >
+//             VIEW ALL
+//           </button>
+//         </div>
+//       )}
 //     </div>
 //   );
 // };
@@ -53,11 +61,17 @@
 // export default NewArrivals;
 import React, { useState } from "react";
 import products from "../data/products";
+import { useNavigate } from "react-router-dom";  // Import navigate
 
 const NewArrivals = () => {
   const [showAll, setShowAll] = useState(false);
 
   const featuredProducts = showAll ? products : products.slice(0, 4);
+
+  const navigate = useNavigate(); 
+  const goToViewPage = (product) => {
+    navigate("./View", { state: { product } });
+  };
 
   return (
     <div className="px-4 py-8">
@@ -74,7 +88,8 @@ const NewArrivals = () => {
             <img
               src={product.image}
               alt={product.name}
-              className="mb-2 w-full object-cover rounded-lg shadow-md"
+              className="mb-2 w-full object-cover rounded-lg shadow-md cursor-pointer"
+              onClick={() => goToViewPage(product)}  
             />
             <p className="font-semibold mt-2">{product.name}</p>
             <img
@@ -87,11 +102,10 @@ const NewArrivals = () => {
         ))}
       </div>
 
-      {/* VIEW ALL button */}
       {!showAll && (
         <div className="flex justify-center">
           <button
-            className="mt-10 h-12 w-48 border-2 border-gray-300 rounded-full text-black hover:bg-black hover:text-white transition duration-300"
+            className="cursor-pointer mt-10 h-12 w-48 border-2 border-gray-300 rounded-full text-black hover:bg-black hover:text-white transition duration-300"
             onClick={() => setShowAll(true)}
           >
             VIEW ALL
